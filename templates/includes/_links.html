@@ -1,0 +1,28 @@
+{% if links %}
+<div class="container mt-3">
+    <h3>Results</h3>
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th>Link href</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for link in links %}
+        <tr>
+            <td style="word-break:break-all;">
+                <a href="{{ link }}" target="_blank">{{ link }}</a>
+            </td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    {% if error %}
+    <div class="alert alert-danger my-3">
+        {{error}}
+    </div>
+    {% endif %}
+    </ul>
+</div>
+{% endif %}
